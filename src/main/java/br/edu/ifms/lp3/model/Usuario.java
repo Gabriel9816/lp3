@@ -7,15 +7,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Data
+@Data //cria todos os get e set
+@AllArgsConstructor //cria os construtores
+@NoArgsConstructor //cria os construtores
+@Entity //cria a tabela no banco de dados
 public class Usuario {
+    
     @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	UUID idUsuario;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	UUID id;
 	String nome;
 	String senha;
     
